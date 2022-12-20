@@ -32,18 +32,17 @@ const char IOTWEBCONF_HTML_STYLE_INNER[] PROGMEM =
     ".em{font-size:0.8em;color:#bb0000;padding-bottom:0px;} "
     ".c{text-align:center;} "
     "div,input,select{padding:5px;font-size:1em;} "
-    "input{width:95%;} "
-    "select{width:100%} "
+    "input{width:95%;} select{width:100%} "
     "input[type=checkbox]{width:auto;scale:1.5;margin:10px;} "
     "body{text-align:center;font-family:verdana;} "
     "button{border:0;border-radius:0.3rem;background-color:#16A1E7;color:#fff;"
     "line-height:2.4rem;font-size:1.2rem;width:100%;} "
-    "fieldset{border-radius:0.3rem;margin:0.2rem;} "
+    "fieldset{border-radius:0.3rem;margin:0.3rem;} "
     "header{background-color:#399E5A;color:#FFF;text-align:left;width:80%;"
     "margin-left:5%;padding:1% 5%;} "
     "main{text-align:left;display:inline-block;width:80%;} "
     "ul li{margin-bottom:10px;} "
-    "hr{margin:0 16px;}\n";
+    "hr{margin:16px 0;}\n";
 const char IOTWEBCONF_HTML_SCRIPT_INNER[] PROGMEM =
     "function "
     "c(l){document.getElementById('s').value=l.innerText||l."
