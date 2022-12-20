@@ -61,8 +61,9 @@ const char IOTWEBCONF_HTML_FORM_END[] PROGMEM =
     "<button type='submit' style='margin-top: 10px;'>Guardar "
     "cambios</button></form>\n";
 const char IOTWEBCONF_HTML_SAVED[] PROGMEM =
-    "<div>Configuration saved<br />Return to <a href='/'>página de "
-    "inicio</a>.</div>\n";
+    "<div><p>Se ha guardado la configuraci&oacuten.</p>"
+    "<p>Regresar a la p&aacutegina de inicio:</p>"
+    "<a href='/'><button>Inicio</button></a></div>\n";
 const char IOTWEBCONF_HTML_END[] PROGMEM = "</div></body></html>";
 const char IOTWEBCONF_HTML_UPDATE[] PROGMEM =
     "<div style='padding-top:25px;'><a href='{u}'>Actualización del "
