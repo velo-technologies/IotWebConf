@@ -37,7 +37,7 @@ const char IOTWEBCONF_HTML_STYLE_INNER[] PROGMEM =
     "body{text-align:center;font-family:verdana;} "
     "button{border:0;border-radius:0.3rem;background-color:#16A1E7;color:#fff;"
     "line-height:2.4rem;font-size:1.2rem;width:100%;} "
-    "fieldset{border-radius:0.3rem;margin:0.3rem;} "
+    "fieldset{border-radius:0.3rem;margin:0.5rem 0.2rem;} "
     "header{background-color:#399E5A;color:#FFF;text-align:left;width:80%;"
     "margin-left:5%;padding:1% 5%;} "
     "main{text-align:left;display:inline-block;width:80%;} "
@@ -660,7 +660,7 @@ private:
       "Nombre del dispositivo", "iwcThingName", this->_thingName,
       IOTWEBCONF_WORD_LEN);
   PasswordParameter _apPasswordParameter = PasswordParameter(
-      "Contrase&ntildea de configuraci&oacute", "iwcApPassword",
+      "Contrase&ntildea de configuraci&oacuten", "iwcApPassword",
       this->_apPassword, IOTWEBCONF_PASSWORD_LEN);
   NumberParameter _apTimeoutParameter = NumberParameter(
       "Tiempo de Zona WiFi (segundos)", "iwcApTimeout", this->_apTimeoutStr,
