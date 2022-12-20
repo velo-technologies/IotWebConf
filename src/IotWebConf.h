@@ -24,24 +24,33 @@
 
 // HTML page fragments
 const char IOTWEBCONF_HTML_HEAD[] PROGMEM =
-    "<!DOCTYPE html><html lang=\"en\"><head><meta name=\"viewport\" "
+    "<!DOCTYPE html><html lang=\"es\"><head><meta name=\"viewport\" "
     "content=\"width=device-width, initial-scale=1, "
     "user-scalable=no\"/><title>{v}</title>\n";
 const char IOTWEBCONF_HTML_STYLE_INNER[] PROGMEM =
     ".de{background-color:#ffaaaa;} "
-    ".em{font-size:0.8em;color:#bb0000;padding-bottom:0px;} .c{text-align: "
-    "center;} div,input,select{padding:5px;font-size:1em;} input{width:95%;} "
+    ".em{font-size:0.8em;color:#bb0000;padding-bottom:0px;} "
+    ".c{text-align:center;} "
+    "div,input,select{padding:5px;font-size:1em;} "
+    "input{width:95%;} "
     "select{width:100%} "
-    "input[type=checkbox]{width:auto;scale:1.5;margin:10px;} body{text-align: "
-    "center;font-family:verdana;} "
+    "input[type=checkbox]{width:auto;scale:1.5;margin:10px;} "
+    "body{text-align:center;font-family:verdana;} "
     "button{border:0;border-radius:0.3rem;background-color:#16A1E7;color:#fff;"
     "line-height:2.4rem;font-size:1.2rem;width:100%;} "
-    "fieldset{border-radius:0.3rem;margin: 0px;}\n";
+    "fieldset{border-radius:0.3rem;margin:0.2rem;} "
+    "header{background-color:#399E5A;color:#FFF;text-align:left;width:80%;"
+    "margin-left:5%;padding:1% 5%;} "
+    "main{text-align:left;display:inline-block;width:80%;} "
+    "ul li{margin-bottom:10px;} "
+    "hr{margin:0 16px;}\n";
 const char IOTWEBCONF_HTML_SCRIPT_INNER[] PROGMEM =
     "function "
-    "c(l){document.getElementById('s').value=l.innerText||l.textContent;"
+    "c(l){document.getElementById('s').value=l.innerText||l."
+    "textContent;"
     "document.getElementById('p').focus();}; function pw(id) { var "
-    "x=document.getElementById(id); if(x.type==='password') {x.type='text';} "
+    "x=document.getElementById(id); if(x.type==='password') "
+    "{x.type='text';} "
     "else {x.type='password';} };";
 const char IOTWEBCONF_HTML_HEAD_END[] PROGMEM = "</head><body>";
 const char IOTWEBCONF_HTML_BODY_INNER[] PROGMEM =
@@ -202,10 +211,11 @@ public:
     this->addItem(&this->wifiPasswordParameter);
   }
   TextParameter wifiSsidParameter = TextParameter(
-      "WiFi SSID", "iwcWifiSsid", this->_wifiSsid, IOTWEBCONF_WORD_LEN);
+      "Router: Nombre de la WiFi (SSID)", "iwcWifiSsid", this->_wifiSsid,
+      IOTWEBCONF_WORD_LEN);
   PasswordParameter wifiPasswordParameter = PasswordParameter(
-      "WiFi password", "iwcWifiPassword", this->_wifiPassword,
-      IOTWEBCONF_PASSWORD_LEN);
+      "Router: Contrase&ntildea de la WiFi", "iwcWifiPassword",
+      this->_wifiPassword, IOTWEBCONF_PASSWORD_LEN);
   char _wifiSsid[IOTWEBCONF_WORD_LEN];
   char _wifiPassword[IOTWEBCONF_PASSWORD_LEN];
 };
@@ -643,17 +653,18 @@ private:
   bool _forceApMode = false;
   ParameterGroup _allParameters = ParameterGroup("iwcAll");
   ParameterGroup _systemParameters =
-      ParameterGroup("iwcSys", "System configuration");
+      ParameterGroup("iwcSys", "Configuraci&oacuten del dispositivo");
   ParameterGroup _customParameterGroups = ParameterGroup("iwcCustom");
   ParameterGroup _hiddenParameters = ParameterGroup("hidden");
   WifiParameterGroup _wifiParameters = WifiParameterGroup("iwcWifi0");
   TextParameter _thingNameParameter = TextParameter(
-      "Thing name", "iwcThingName", this->_thingName, IOTWEBCONF_WORD_LEN);
+      "Nombre del dispositivo", "iwcThingName", this->_thingName,
+      IOTWEBCONF_WORD_LEN);
   PasswordParameter _apPasswordParameter = PasswordParameter(
-      "AP password", "iwcApPassword", this->_apPassword,
-      IOTWEBCONF_PASSWORD_LEN);
+      "Contrase&ntildea de configuraci&oacute", "iwcApPassword",
+      this->_apPassword, IOTWEBCONF_PASSWORD_LEN);
   NumberParameter _apTimeoutParameter = NumberParameter(
-      "Startup delay (seconds)", "iwcApTimeout", this->_apTimeoutStr,
+      "Tiempo de Zona WiFi (segundos)", "iwcApTimeout", this->_apTimeoutStr,
       IOTWEBCONF_WORD_LEN, IOTWEBCONF_DEFAULT_AP_MODE_TIMEOUT_SECS, nullptr,
       "min='1' max='600'");
   char _thingName[IOTWEBCONF_WORD_LEN];
