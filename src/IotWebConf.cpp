@@ -359,16 +359,18 @@ void IotWebConf::handleConfig(WebRequestWrapper* webRequestWrapper)
     //    page += _customHeadElement;
     page += htmlFormatProvider->getHeadExtension();
     page += htmlFormatProvider->getHeadEnd();
-    page += "Configuration saved. ";
+    page += "Se ha guardado la configuraci&oacuten.";
     if (this->_apPassword[0] == '\0')
     {
-      page += F("You must change the default AP password to continue. Return "
-                "to <a href=''>configuration page</a>.");
+      page += F(
+          "Se debe cambiar la contrase&ntildea por defecto de la Zona Wifi. "
+          "Regresar a la <a href=''>p&aacutegina de configuraci&oacuten</a>.");
     }
     else if (this->_wifiParameters._wifiSsid[0] == '\0')
     {
-      page += F("You must provide the local wifi settings to continue. Return "
-                "to <a href=''>configuration page</a>.");
+      page +=
+          F("Se deben proporcionar los datos de la WiFi a utilizar. Regresar a "
+            "la <a href=''>p&aacutegina de configuraci&oacuten</a>.");
     }
     else if (this->_state == NotConfigured)
     {
