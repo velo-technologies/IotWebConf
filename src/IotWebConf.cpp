@@ -882,6 +882,14 @@ bool IotWebConf::checkWifiConnection()
   Serial.println("WiFi connected");
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
+  Serial.print("MAC address: ");
+  Serial.println(WiFi.macAddress());
+  Serial.print("Subnet mask: ");
+  Serial.println(WiFi.subnetMask());
+  Serial.print("Gateway IP: ");
+  Serial.println(WiFi.gatewayIP());
+  Serial.print("DNS IP: ");
+  Serial.println(WiFi.dnsIP());
 #endif
 
   return true;
