@@ -302,9 +302,9 @@ public:
    * Start up the IotWebConf module.
    * Loads all configuration from the EEPROM, and initialize the system.
    * Will return false, if no configuration (with specified config version) was
-   * found in the EEPROM.
+   * found in the EEPROM. The bool parameter will force a confi reset if true.
    */
-  bool init();
+  bool init(bool forceReset);
 
   /**
    * IotWebConf is a non-blocking, state controlled system. Therefor it should

@@ -70,7 +70,7 @@ void IotWebConf::setStatusPin(int statusPin, int statusOnLevel)
   this->_statusOnLevel = statusOnLevel;
 }
 
-bool IotWebConf::init()
+bool IotWebConf::init(bool forceReset = false)
 {
   // -- Setup pins.
   if (this->_configPin >= 0)
@@ -85,7 +85,9 @@ bool IotWebConf::init()
   }
 
   // -- Load configuration from EEPROM.
-  bool validConfig = this->loadConfig();
+  bool validConfig = !forceReset;
+  if (!forceReset)
+    validConfig = this->loadConfig();
   if (!validConfig)
   {
     // -- No config
